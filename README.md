@@ -4,6 +4,6 @@ This R script helps extract the population percentage estimates by race/ethnicit
 
 Before using this script, download the 2017 (or latest) American Community Survey - Demographic and Housing Estimates from the US census website. Below is a screenshot of how to access and download the correct dataset file:
 
-[ccc](ACS_dataset_extraction_screenshot.png)
+![ACS_screenshot](ACS_dataset_extraction_screenshot.png)
 
 The file name for 2017 is: ACS_17_5YR_DP05_with_ann.csv'
