@@ -1,4 +1,4 @@
-# Extracting Census Data from American Community Survey  
+# Extracting US Census Data by Zip Code
 
 This R script helps extract the population percentage estimates by race/ethnicity from the 2017 American Community Survey - Demographic and Housing Estimates for relevant zip codes. This script also includes a way to calculate an entropy value that represents the diversity of different racial/ethnic groups in that particular zipcode (i.e., a way to weigh the number of different racial/ethnic groups) using the package 'philentropy.'
 
