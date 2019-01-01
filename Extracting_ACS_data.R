@@ -1,6 +1,6 @@
 
 #### script to import information from the 2017 American Community Survey - Demographic and Housing Estimates 
-#### last updated December 26 2018
+#### last updated Jan 1 2019
 
 
 ### Set the workspace
@@ -11,19 +11,11 @@ cat("\014")
 
 # load library
 library(readxl)
-library(ggplot2)
 library(psych)
-library(optimx)
-library(sjPlot)
-library(stargazer)
-library(lmtest)
-library(lme4)
-library(ggpubr)
 library(tidyr)
 library(plyr)
 library(dplyr)
-library(lsmeans)
-library(jtools)
+
   
 # set working directory
 setwd("/Users/hyesunghwang/Dropbox/MN_Secondary/Census_data")
@@ -101,9 +93,13 @@ cc_corrected$zipcode<-cc$zipcode
 # write data into csv file
 write.csv(cc_corrected, file = "Pts_ACS_survey_zipcode.csv")
 
-# put zipcode into corresponding values in the dataset - still needs work
+
+##############
+# put zipcode into corresponding values in the dataset - still in the works
+# read in data file
 BIG_zipcode<-read_excel("BIG_zipcode.xlsx")
 
+# subset to only the relevant subject numbers
 BIG_zipcode_short<-subset(BIG_zipcode, P %in% c("14", "19",
                                                 "20",
                                                 "22",
@@ -130,66 +126,7 @@ BIG_zipcode_short<-subset(BIG_zipcode, P %in% c("14", "19",
 
 write.csv(BIG_zipcode_short, file = "BIG_zipcode_short.csv")
 
-# combine with dataset
-setwd("/Users/hyesunghwang/Dropbox/MN_Secondary/BIG")
-BIG_short<-read.csv("BIG_short.csv")
-BIG_short2<-subset(BIG_short, ID %in% c("14", "19",
-                                                "20",
-                                                "22",
-                                                "26",
-                                                "34",
-                                                "36",
-                                                "38",
-                                                "39",
-                                                "40",
-                                                "42",
-                                                "45",
-                                                "51",
-                                                "53",
-                                                "55",
-                                                "58",
-                                                "62",
-                                                "63",
-                                                "64",
-                                                "65",
-                                                "69",
-                                                "70",
-                                                "72",
-                                                "78"))
-
-write.csv(BIG_short2, file = "BIG_short2.csv")
 
 
 
 
-
-
-
-
-# columns of interest
-zipcode<-select(ACS_survey, GEO.id2) # zipcode 
-white_zipcode<-select(ACS_survey, HC03_VC54) # Percent; RACE - One race - White
-black_zipcode<-select(ACS_survey, HC03_VC55) # Percent; RACE - One race - Black or African American
-americanindian_zipcode<-select(ACS_survey, HC03_VC56) # Percent; RACE - One race - American Indian and Alaska Native
-asian_zipcode<-select(ACS_survey, HC03_VC61) # Percent; RACE - One race - Asian
-asian_indian_zipcode<-select(ACS_survey, HC03_VC62) # Percent; RACE - One race - Asian - Asian Indian
-# eastasian_zipcode<-select(ACS_survey, HC03_VC63)# HC03_VC63 - chinese; HC03_VC64 - fillipino; HC03_VC65 - Japanese; HC03_VC66 - Korean; HC03_VC67 - vietnamese; HC03_VC68  - other asian
-#sum(ACS_survey$HC03_VC63, ACS_survey$HC03_VC64, ACS_survey$HC03_VC65, ACS_survey$HC03_VC66, ACS_survey$HC03_VC67, ACS_survey$HC03_VC68)
-nativehawaiian_zipcode<-select(ACS_survey, HC03_VC69) # Percent; RACE - One race - Native Hawaiian and Other Pacific Islander
-some_other_race_zipcode<-select(ACS_survey, HC03_VC74) # Percent; RACE - One race - Some other race
-two_or_more_zipcode<-select(ACS_survey, HC03_VC75) # Percent; RACE - Two or more races
-#colnames(ACS_survey_short)[which(names(ACS_survey_short) == "HC03_VC62")] <- "asian_indian_zipcode"
-
-
-# round all values in the dataframe:
-round_df <- function(df, digits = 3) {
-  nums <- vapply(df, is.numeric, FUN.VALUE = logical(1))
-  
-  df[,nums] <- round(df[,nums], digits = digits)
-  
-  (df)
-}
-cc2<-round_df(cc, digits =0)
-
-# calculate whether all the values add to 100%
-cc2$sum<- rowSums(cc2[,c(2:8)])
