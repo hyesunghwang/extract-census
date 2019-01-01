@@ -11,11 +11,19 @@ The file name of the dataset should be : ACS_17_5YR_DP05_with_ann.csv
 
 ## Description of columns of interests in the ACS dataset
 
+### Major racial and ethnic categories
+
 - GEO.id2 = zip code 
 - HC03_VC54 = Percent; RACE - One race - White
 - HC03_VC55 = Percent; RACE - One race - Black or African American
 - HC03_VC56 = Percent; RACE - One race - American Indian and Alaska Native
 - HC03_VC61 = Percent; RACE - One race - Asian
+- HC03_VC69 - Percent; RACE - One race - Native Hawaiian and Other Pacific Islander
+- HC03_VC74 - Percent; RACE - One race - Some other race
+- HC03_VC75 - Percent; RACE - Two or more races
+
+### Asian sub-categories 
+
 - HC03_VC62 = Percent; RACE - One race - Asian Indian
 - HC03_VC63 = Percent; RACE - One race -Chinese 
 - HC03_VC64 - Percent; RACE - One race -Fillipino 
@@ -23,8 +31,5 @@ The file name of the dataset should be : ACS_17_5YR_DP05_with_ann.csv
 - HC03_VC66 - Percent; RACE - One race -Korean 
 - HC03_VC67 - Percent; RACE - One race -Vietnamese 
 - HC03_VC68 - Percent; RACE - One race -Other asian
-- HC03_VC69 - Percent; RACE - One race - Native Hawaiian and Other Pacific Islander
-- HC03_VC74 - Percent; RACE - One race - Some other race
-- HC03_VC75 - Percent; RACE - Two or more races
 
 
