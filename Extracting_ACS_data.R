@@ -1,7 +1,5 @@
 
-#### script to import information from the 2017 American Community Survey - Demographic and Housing Estimates 
-#### last updated Jan 1 2019
-
+#### extract race characteristics from 2017 American Community Survey - Demographic and Housing Estimates 
 
 ### Set the workspace
 
