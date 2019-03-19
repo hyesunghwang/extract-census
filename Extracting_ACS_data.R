@@ -14,7 +14,7 @@ library(tidyr)
 library(plyr)
 library(dplyr)
 
-  
+
 # set working directory
 setwd("/Users/hyesunghwang/Dropbox/extract-census")
 
@@ -24,17 +24,22 @@ setwd("/Users/hyesunghwang/Dropbox/extract-census")
 ACS_race<-read.csv("ACS_17_5YR_DP05_with_ann.csv", header=TRUE)
 
 # extract columns of interest (the % of population in that race)
-ACS_race_short<-select(ACS_race, GEO.id2, HC03_VC54, HC03_VC55, HC03_VC56, HC03_VC61, HC03_VC69, HC03_VC74, HC03_VC75)
+ACS_race_short<-select(ACS_race, GEO.id2,
+                       HC03_VC93, HC03_VC99, HC03_VC100, HC03_VC101, HC03_VC102, HC03_VC103, HC03_VC104, HC03_VC105)
 
 # change columns names
 colnames(ACS_race_short)[which(names(ACS_race_short) == "GEO.id2")] <- "zipcode"
-colnames(ACS_race_short)[which(names(ACS_race_short) == "HC03_VC54")] <- "white_zipcode"
-colnames(ACS_race_short)[which(names(ACS_race_short) == "HC03_VC55")] <- "black_zipcode"
-colnames(ACS_race_short)[which(names(ACS_race_short) == "HC03_VC56")] <- "americanindian_zipcode"
-colnames(ACS_race_short)[which(names(ACS_race_short) == "HC03_VC61")] <- "asian_zipcode"
-colnames(ACS_race_short)[which(names(ACS_race_short) == "HC03_VC69")] <- "nativehawaiian_zipcode"
-colnames(ACS_race_short)[which(names(ACS_race_short) == "HC03_VC74")] <- "some_other_race_zipcode"
-colnames(ACS_race_short)[which(names(ACS_race_short) == "HC03_VC75")] <- "two_or_more_zipcode"
+colnames(ACS_race_short)[which(names(ACS_race_short) == "HC03_VC93")] <- "hispanic_zipcode"
+colnames(ACS_race_short)[which(names(ACS_race_short) == "HC03_VC99")] <- "white_zipcode"
+colnames(ACS_race_short)[which(names(ACS_race_short) == "HC03_VC100")] <- "black_zipcode"
+colnames(ACS_race_short)[which(names(ACS_race_short) == "HC03_VC101")] <- "americanindian_zipcode"
+colnames(ACS_race_short)[which(names(ACS_race_short) == "HC03_VC102")] <- "asian_zipcode"
+colnames(ACS_race_short)[which(names(ACS_race_short) == "HC03_VC103")] <- "nativehawaiian_zipcode"
+colnames(ACS_race_short)[which(names(ACS_race_short) == "HC03_VC104")] <- "some_other_race_zipcode"
+colnames(ACS_race_short)[which(names(ACS_race_short) == "HC03_VC105")] <- "two_or_more_zipcode"
+
+# delete null first row
+ACS_race_short<-ACS_race_short[-1,]
 
 # change values into numeric
 ACS_race_short[] <- lapply(ACS_race_short, function(x) {
@@ -43,8 +48,8 @@ ACS_race_short[] <- lapply(ACS_race_short, function(x) {
 sapply(ACS_race_short, class)
 
 ############################################################################### import the column with the zipcodes of interest from an excel dataset
-setwd("/Users/hyesunghwang/Dropbox/food_diversity")
-Data<-read_excel("Adult_pilot2.xlsx")
+setwd("/Users/hyesunghwang/Dropbox/MN_Secondary/All")
+Data<-read_excel("MN_all_final.xlsx")
 list<-Data$Zipcode
 
 ## Loop to extract only zip codes of interest
@@ -60,17 +65,17 @@ for (i in list) {
 colnames(cc_race)<-colnames(ACS_race_short)
 
 # calculate whether all the population % add to 100%
-cc_race$sum_zipcode<- rowSums(cc_race[,c(2:8)])
+cc_race$sum_zipcode<- rowSums(cc_race[,c(2:9)])
 
 # calculate how much off from 100 (since there is error in measurement typically the numbers are off by .1%)
 cc_race$sum_zipcode_diff<-100-cc_race$sum_zipcode
 
-# To make the sum equal 100 (since entropy measurement requires all numbers to sum to 0), add a new column that adds the error to white population
+# To make the sum equal 100 (since entropy measurement requires all numbers to sum to 0), add a new column that adds the error to hispanic population
 cc_race_corrected<-cc_race
-cc_race_corrected$white_zipcode<-cc_race_corrected$white_zipcode+cc_race_corrected$sum_zipcode_diff
+cc_race_corrected$hispanic_zipcode<-cc_race_corrected$hispanic_zipcode+cc_race_corrected$sum_zipcode_diff
 
 # create a new sum now to make sure all population adds to 100
-cc_race_corrected$new_sum_zipcode<- rowSums(cc_race_corrected[,c(2:8)])
+cc_race_corrected$new_sum_zipcode<- rowSums(cc_race_corrected[,c(2:9)])
 
 # divide all values by 100 to change sum to 1
 cc_race_corrected<-cc_race_corrected[,-1]/100
@@ -82,8 +87,8 @@ cc_race_corrected$entropy<-NA
 library(philentropy)
 
 for (i in 1:nrow(cc_race_corrected)) {
-  zipcode_vector<-as.numeric(as.vector(cc_race_corrected[i,c(1:7)])) # get the values extracted into vectors for each zipcode/row
-  cc_race_corrected[i,11]<-H(zipcode_vector) # calcualte entropy and put it in the entropy column and corresponding zipcode
+  zipcode_vector<-as.numeric(as.vector(cc_race_corrected[i,c(1:8)])) # get the values extracted into vectors for each zipcode/row
+  cc_race_corrected[i,12]<-H(zipcode_vector) # calcualte entropy and put it in the entropy column and corresponding zipcode
 }
 
 # add in the zipcode column back in
@@ -153,7 +158,7 @@ colnames(cc_income)<-colnames(ACS_income_short)
 
 #################### POPULATION DENSITY ##################### 
 # set working directory
-setwd("/Users/hyesunghwang/Dropbox/MN_Secondary/Census_data/")
+setwd("/Users/hyesunghwang/Dropbox/extract-census")
 #Population, Housing Units, Area, and Density: 2010 - State -- 5-digit ZIP Code Tabulation Area  more information - 2010 Census Summary File 1
 ACS_land_area<-read.csv("DEC_10_SF1_GCTPH1.ST09_with_ann.csv", header=TRUE)
 
@@ -206,39 +211,7 @@ colnames(cc_density)<-colnames(ACS_population_density)
 cc_combined<-cbind(cc_race_corrected, cc_nonenglish, cc_income, cc_density)
 
 
-#################### Foreign born ####################
-
-# Import ACS foreignborn dataset (see readme for how to download this dataset)
-setwd("/Users/hyesunghwang/Dropbox/extract-census")
-ACS_foreignborn<-read.csv("ACS_17_5YR_S0501_with_ann.csv", header=TRUE)
-
-# extract columns of interest (the % of population in that race)
-ACS_foreignborn_short<-select(ACS_foreignborn, GEO.id2, HC03_EST_VC01)
-
-# change columns names
-colnames(ACS_foreignborn_short)[which(names(ACS_foreignborn_short) == "GEO.id2")] <- "zipcode"
-colnames(ACS_foreignborn_short)[which(names(ACS_foreignborn_short) == "HC03_EST_VC01")] <- "foreignborn" # Foreign born; Estimate; Total population
-
-# change values into numeric
-ACS_foreignborn_short[] <- lapply(ACS_foreignborn_short, function(x) {
-  if(is.factor(x)) as.numeric(as.character(x)) else x
-})
-sapply(ACS_foreignborn_short, class)
-
-## Loop to extract only zip codes of interest
-# empty data frame to hold results
-cc_foreignborn<-data.frame() 
-for (i in list) {
-  dd<-as.data.frame(matrix(nrow=1,ncol=NCOL(ACS_foreignborn_short)))
-  dd<-subset(ACS_foreignborn_short, ACS_foreignborn_short$zipcode==i)
-  cc_foreignborn<-rbind(cc_foreignborn,dd)
-}
-
-# put in column names for extracted dataset with zip codes of interest
-colnames(cc_foreignborn)<-colnames(ACS_foreignborn_short)
-
-
 ############################################################################### write data into csv file
-setwd("/Users/hyesunghwang/Dropbox/food_diversity")
-write.csv(cc_combined, file = "Adult_pilot2_zipcode.csv")
+setwd("/Users/hyesunghwang/Dropbox/MN_Secondary/All")
+write.csv(cc_combined, file = "MN_all_zipcode.csv")
 
