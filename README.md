@@ -64,13 +64,6 @@ The file name of the dataset should be : ACS_17_5YR_DP03_with_ann.csv
  - GEO.id2 : zip code
  - HC01_VC85 : Estimate; INCOME AND BENEFITS (IN 2017 INFLATION-ADJUSTED DOLLARS) - Total households - Median household income (dollars)
  
-## Education attainment
-In the download center, narrow your selections to:
-1) Dataset: 2017 ACS 5-year estimates 
-2) 5-Digist ZCTA All 5-Digit ZIP Code Tabulation Areas within United States and Puerto Rico
-3) B15003: EDUCATIONAL ATTAINMENT FOR THE POPULATION 25 YEARS AND OVER 
-The file name of the dataset should be : ACS_17_5YR_B15003_with_ann.csv
- 
 ## Population density
 This one is taken from the 2010 US census instead of ACS because ACS does not have population density measures (or as far as I can find).
 Instead of download center, go to advanced search and search the following term:
