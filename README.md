@@ -63,7 +63,8 @@ The file name of the dataset should be : ACS_17_5YR_DP03_with_ann.csv
 ### Description of columns of interests 
  - GEO.id2 : zip code
  - HC01_VC85 : Estimate; INCOME AND BENEFITS (IN 2017 INFLATION-ADJUSTED DOLLARS) - Total households - Median household income (dollars)
- 
+
+
 ## Population density
 This one is taken from the 2010 US census instead of ACS because ACS does not have population density measures (or as far as I can find).
 Instead of download center, go to advanced search and search the following term:
@@ -76,7 +77,20 @@ The file name of the dataset should be : DEC_10_SF1_GCTPH1.ST09_with_ann.csv
  - HD01 : population
  - SUBHD0303 : AREA CHARACTERISTICS - Area (Land)
  - SUBHD0401 : Density per square mile of land area - Population
- 
+
+
+## Education attainment
+In the download center, narrow your selections to:
+1) Dataset: 2017 ACS 5-year estimates 
+2) 5-Digist ZCTA All 5-Digit ZIP Code Tabulation Areas within United States and Puerto Rico
+3) Educational attainment
+The file name of the dataset should be : ACS_17_5YR_S1501_with_ann.csv
+
+### Description of columns of interests 
+ - GEO.id2 : zip code
+ - HC02_EST_VC17 : Percent; Estimate; Percent high school graduate or higher
+ - HC02_EST_VC18 :Percent; Estimate; Percent bachelor's degree or higher
+
  
  
  
