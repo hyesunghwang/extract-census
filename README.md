@@ -34,40 +34,43 @@ Below is a screenshot of how to access and download the correct dataset file for
 - DP05_0057PE : Percent; RACE - One race - Some other race
 - DP05_0035PE : Percent; RACE - Two or more races
 
-#### Asian sub-categories 
-
-- HC03_VC62 : Percent; RACE - One race - Asian Indian
-- HC03_VC63 : Percent; RACE - One race -Chinese 
-- HC03_VC64 : Percent; RACE - One race -Fillipino 
-- HC03_VC65 : Percent; RACE - One race -Japanese 
-- HC03_VC66 : Percent; RACE - One race -Korean 
-- HC03_VC67 : Percent; RACE - One race -Vietnamese 
-- HC03_VC68 : Percent; RACE - One race -Other asian
-
 ## Non-English speaking population
 Language Spoken at Home.
-In the download center, narrow your selections to:
-1) Dataset: 2017 ACS 5-year estimates 
-2) 5-Digist ZCTA All 5-Digit ZIP Code Tabulation Areas within United States and Puerto Rico
-3) Language spoken at home
-The file name of the dataset should be : ACS_17_5YR_S1601_with_ann.csv
+1) Go to https://data.census.gov/cedsci/
+2) Search "S1601" 
+3) click "Language Spoken at Home"
+4) click "Customize Table"
+5) click "Geographies"
+6) select "Zip Code Tabulation Area (Five-Digit)"
+7) select "Within Other Geographies" below it "Zip Code Tabulation Area (Five-Digit)"
+8) select "All ZCTAs in United States"
+9) Then click "download" and select 2018
 
 ### Description of columns of interests 
- - GEO.id2 : zip code
- - HC02_EST_VC03 : Percent; Estimate; Speak a language other than English
+- GEO.id2 : zip code
+- S1601_C02_003E : "percent_nonenglish" Estimate!!Percent!!Population 5 years and over!!Speak a language other than English
+- S1601_C02_002E : "percent_englishonly" Estimate!!Percent of specified language speakers!!Percent speak English only or speak English very well"!!Population 5 years and over!!Speak a language other than English"
+- S1601_C02_004E : "percent_spanish_speaking" Estimate!!Percent!!Population 5 years and over!!SPEAK A LANGUAGE OTHER THAN ENGLISH!!Spanish
+- S1601_C02_008E : "percent_IndoEuropean_speaking" Estimate!!Percent!!Population 5 years and over!!SPEAK A LANGUAGE OTHER THAN ENGLISH!!Other Indo-European languages
+- S1601_C02_012E : "percent_AsianPacific_speaking" Estimate!!Total!!Population 5 years and over!!SPEAK A LANGUAGE OTHER THAN ENGLISH!!Asian and Pacific Island languages
+- S1601_C02_016E : "percent_otherlang_speaking" Estimate!!Percent!!Population 5 years and over!!SPEAK A LANGUAGE OTHER THAN ENGLISH!!Other languages
+
 
 ## Median income 
 Selected economic characteristics
-In the download center, narrow your selections to:
-1) Dataset: 2017 ACS 5-year estimates 
-2) 5-Digist ZCTA All 5-Digit ZIP Code Tabulation Areas within United States and Puerto Rico
-3) selected economic characteristics
-The file name of the dataset should be : ACS_17_5YR_DP03_with_ann.csv
+1) Go to https://data.census.gov/cedsci/
+2) Search "DP03" 
+3) click "Language Spoken at Home"
+4) click "Customize Table"
+5) click "Geographies"
+6) select "Zip Code Tabulation Area (Five-Digit)"
+7) select "Within Other Geographies" below it "Zip Code Tabulation Area (Five-Digit)"
+8) select "All ZCTAs in United States"
+9) Then click "download" and select 2018
 
 ### Description of columns of interests 
  - GEO.id2 : zip code
- - HC01_VC85 : Estimate; INCOME AND BENEFITS (IN 2017 INFLATION-ADJUSTED DOLLARS) - Total households - Median household income (dollars)
-
+ - DP03_0062E : Estimate!!INCOME AND BENEFITS (IN 2018 INFLATION-ADJUSTED DOLLARS)!!Total households!!Median household income (dollars)
 
 ## Population density
 This one is taken from the 2010 US census instead of ACS because ACS does not have population density measures (or as far as I can find).
