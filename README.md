@@ -16,6 +16,8 @@ Before using this script, download the relevant American Community Surveys from 
 8) select "All ZCTAs in United States"
 9) Then click "download" and select 2018
 
+The file name of the dataset should be like this (except with an updated download date) : ACSDP5Y2018.DP05_data_with_overlays_2020-07-21T075534.csv
+
 Below is a screenshot of how to access and download the correct dataset file for 2018 dataset:
 
 ![ACS_screenshot](New_ACS_dataset_extraction.png)
@@ -46,6 +48,8 @@ Language Spoken at Home.
 8) select "All ZCTAs in United States"
 9) Then click "download" and select 2018
 
+The file name of the dataset should be like this (except with an updated download date): ACSST5Y2018.S1601_data_with_overlays_2020-07-28T181025.csv
+
 ### Description of columns of interests 
 - GEO.id2 : zip code
 - S1601_C02_003E : "percent_nonenglish" Estimate!!Percent!!Population 5 years and over!!Speak a language other than English
@@ -57,16 +61,17 @@ Language Spoken at Home.
 
 
 ## Median income 
-Selected economic characteristics
 1) Go to https://data.census.gov/cedsci/
 2) Search "DP03" 
-3) click "Language Spoken at Home"
+3) click "Selected economic characteristics"
 4) click "Customize Table"
 5) click "Geographies"
 6) select "Zip Code Tabulation Area (Five-Digit)"
 7) select "Within Other Geographies" below it "Zip Code Tabulation Area (Five-Digit)"
 8) select "All ZCTAs in United States"
 9) Then click "download" and select 2018
+
+The file name of the dataset should be like this (except with an updated download date): ACSDP5Y2018.DP03_data_with_overlays_2020-07-28T144525.csv
 
 ### Description of columns of interests 
  - GEO.id2 : zip code
@@ -87,16 +92,22 @@ The file name of the dataset should be : DEC_10_SF1_GCTPH1.ST09_with_ann.csv
 
 
 ## Education attainment
-In the download center, narrow your selections to:
-1) Dataset: 2017 ACS 5-year estimates 
-2) 5-Digist ZCTA All 5-Digit ZIP Code Tabulation Areas within United States and Puerto Rico
-3) Educational attainment
-The file name of the dataset should be : ACS_17_5YR_S1501_with_ann.csv
+1) Go to https://data.census.gov/cedsci/
+2) Search "S1501" 
+3) click "Educational Attainment"
+4) click "Customize Table"
+5) click "Geographies"
+6) select "Zip Code Tabulation Area (Five-Digit)"
+7) select "Within Other Geographies" below it "Zip Code Tabulation Area (Five-Digit)"
+8) select "All ZCTAs in United States"
+9) Then click "download" and select 2018
+
+The file name of the dataset should be like this (except with an updated download date) : ACSST5Y2018.S1501_data_with_overlays_2020-07-21T180804.csv
 
 ### Description of columns of interests 
  - GEO.id2 : zip code
- - HC02_EST_VC17 : Percent; Estimate; Percent high school graduate or higher
- - HC02_EST_VC18 :Percent; Estimate; Percent bachelor's degree or higher
+ - S1501_C02_023E : Estimate!!Percent!!Population 25 years and over!!Population 45 to 64 years!!High school graduate or higher
+ - S1501_C02_024E : Estimate!!Percent!!Population 25 years and over!!Population 45 to 64 years!!Bachelor's degree or higher
 
  
  
