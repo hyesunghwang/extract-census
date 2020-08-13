@@ -16,7 +16,7 @@ Before using this script, download the relevant American Community Surveys from 
 8) select "All ZCTAs in United States"
 9) Then click "download" and select 2018
 
-Below is a screenshot of how to access and download the correct dataset file for 2017 dataset:
+Below is a screenshot of how to access and download the correct dataset file for 2018 dataset:
 
 ![ACS_screenshot](New_ACS_dataset_extraction.png)
 
@@ -25,14 +25,14 @@ Below is a screenshot of how to access and download the correct dataset file for
 #### Major racial and ethnic categories
 
 - GEO.id2 : zip code 
-- DP05_0037PE : Percent; RACE - One race - White
-- DP05_0038PE : Percent; RACE - One race - Black or African American
-- DP05_0039PE : Percent; RACE - One race - American Indian and Alaska Native
-- DP05_0044PE : Percent; RACE - One race - Asian
-- DP05_0052PE : Percent; RACE - One race - Native Hawaiian and Other Pacific Islander
+- DP05_0077PE : Percent; RACE - One race - White Alone
+- DP05_0078PE : Percent; RACE - One race - Black or African American
+- DP05_0079PE : Percent; RACE - One race - American Indian and Alaska Native
+- DP05_0080PE : Percent; RACE - One race - Asian
+- DP05_0081PE : Percent; RACE - One race - Native Hawaiian and Other Pacific Islander
 - DP05_0071PE : Percent; RACE - One race - Hispanic
-- DP05_0057PE : Percent; RACE - One race - Some other race
-- DP05_0035PE : Percent; RACE - Two or more races
+- DP05_0082PE : Percent; RACE - One race - Some other race
+- DP05_0083PE : Percent; RACE - Two or more races
 
 ## Non-English speaking population
 Language Spoken at Home.
