@@ -1,5 +1,5 @@
 
-#### extract race characteristics from 2018 American Community Survey - Demographic and Housing Estimates 
+#### extract race characteristics from 2017 American Community Survey - Demographic and Housing Estimates 
 
 ### Set the workspace
 
@@ -303,7 +303,7 @@ ACS_ed_short<-dplyr::select(ACS_ed, S1501_C02_023E, S1501_C02_021E)
 
 # change columns names
 colnames(ACS_ed_short)[which(names(ACS_ed_short) == "S1501_C02_023E")] <- "Ed_highschool_higher" #Estimate!!Percent!!Population 25 years and over!!Population 45 to 64 years!!High school graduate or higher
-colnames(ACS_ed_short)[which(names(ACS_ed_short) == "S1501_C02_021E")] <- "Ed_ba_higher" # Estimate!!Percent!!Population 25 years and over!!Population 35 to 44 years!!Bachelor's degree or higher
+colnames(ACS_ed_short)[which(names(ACS_ed_short) == "S1501_C02_024E")] <- "Ed_ba_higher" # Estimate!!Percent!!Population 25 years and over!!Population 45 to 64 years!!Bachelor's degree or higher
 
 
 # change values into numeric
