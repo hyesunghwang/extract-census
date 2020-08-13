@@ -1,5 +1,5 @@
 
-#### extract race characteristics from 2017 American Community Survey - Demographic and Housing Estimates 
+#### extract race characteristics from 2018 American Community Survey - Demographic and Housing Estimates 
 
 ### Set the workspace
 
