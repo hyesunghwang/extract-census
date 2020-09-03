@@ -59,6 +59,7 @@ The file name of the dataset should be like this (except with an updated downloa
 - S1601_C02_012E : "percent_AsianPacific_speaking" Estimate!!Total!!Population 5 years and over!!SPEAK A LANGUAGE OTHER THAN ENGLISH!!Asian and Pacific Island languages
 - S1601_C02_016E : "percent_otherlang_speaking" Estimate!!Percent!!Population 5 years and over!!SPEAK A LANGUAGE OTHER THAN ENGLISH!!Other languages
 
+*This is using the most broad category; U.S. census does collect more detailed 42 language distinctions: https://www.census.gov/topics/population/language-use/about.html
 
 ## Median income 
 1) Go to https://data.census.gov/cedsci/
