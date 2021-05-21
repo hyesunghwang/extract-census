@@ -14,9 +14,9 @@ Before using this script, download the relevant American Community Surveys from 
 6) select "Zip Code Tabulation Area (Five-Digit)"
 7) select "Within Other Geographies" below it "Zip Code Tabulation Area (Five-Digit)"
 8) select "All ZCTAs in United States"
-9) Then click "download" and select 2018
+9) Then click "download" and select 2019 (or the latest year you want)
 
-The file name of the dataset should be like this (except with an updated download date) : ACSDP5Y2018.DP05_data_with_overlays_2020-07-21T075534.csv
+The file name of the dataset should be like this (except with an updated download date) : ACSDP5Y2019.DP05_data_with_overlays_2021-05-12T022242.csv
 
 Below is a screenshot of how to access and download the correct dataset file for 2018 dataset:
 
@@ -70,7 +70,7 @@ The file name of the dataset should be like this (except with an updated downloa
 6) select "Zip Code Tabulation Area (Five-Digit)"
 7) select "Within Other Geographies" below it "Zip Code Tabulation Area (Five-Digit)"
 8) select "All ZCTAs in United States"
-9) Then click "download" and select 2018
+9) Then click "download" and select 2019
 
 The file name of the dataset should be like this (except with an updated download date): ACSDP5Y2018.DP03_data_with_overlays_2020-07-28T144525.csv
 
@@ -101,7 +101,7 @@ The file name of the dataset should be : DEC_10_SF1_GCTPH1.ST09_with_ann.csv
 6) select "Zip Code Tabulation Area (Five-Digit)"
 7) select "Within Other Geographies" below it "Zip Code Tabulation Area (Five-Digit)"
 8) select "All ZCTAs in United States"
-9) Then click "download" and select 2018
+9) Then click "download" and select 2019
 
 The file name of the dataset should be like this (except with an updated download date) : ACSST5Y2018.S1501_data_with_overlays_2020-07-21T180804.csv
 
