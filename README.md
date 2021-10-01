@@ -61,6 +61,26 @@ The file name of the dataset should be like this (except with an updated downloa
 
 *This is using the most broad category; U.S. census does collect more detailed 42 language distinctions: https://www.census.gov/topics/population/language-use/about.html
 
+
+## Native and Foreign born
+Native and foreign born population
+1) Go to https://data.census.gov/cedsci/
+2) Search "DP02" 
+3) click "SELECTED SOCIAL CHARACTERISTICS IN THE UNITED STATES"
+4) click "Customize Table"
+5) click "Geographies"
+6) select "Zip Code Tabulation Area (Five-Digit)"
+7) select "Within Other Geographies" below it "Zip Code Tabulation Area (Five-Digit)"
+8) select "All ZCTAs in United States"
+9) Then click "download" and select 2018
+
+The file name of the dataset should be like this (except with an updated download date): ACSDP5Y2019.DP02_data_with_overlays_2021-09-02T094337.csvv
+
+### Description of columns of interests 
+- GEO.id2 : zip code
+- DP02_0089PE : "percent_native_born" Percent!!PLACE OF BIRTH!!Total population!!Native!!Born in United States
+- DP02_0093PE : "percent_foreign_born" Percent!!PLACE OF BIRTH!!Total population!!Foreign born
+
 ## Median income 
 1) Go to https://data.census.gov/cedsci/
 2) Search "DP03" 
