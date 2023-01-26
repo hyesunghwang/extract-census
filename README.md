@@ -132,5 +132,5 @@ The file name of the dataset should be like this (except with an updated downloa
 
  
  
- 
+ ## Once the files are downloaded, you can take a look at the r script examples to see how I extracted the relevant census data for zip codes of interests: Extracting_ACS_data_2017census_example.R and Extracting_ACS_data_newcensus2022_example.R
  
